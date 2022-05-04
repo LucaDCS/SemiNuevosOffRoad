@@ -1,0 +1,133 @@
+<div class="cotainer text-center p-4">
+    <div class="row">
+        <div class="col-4 snor-table-overflow ">
+            <h4>Tipos de vehículo</h4>
+            <table class="table table-light table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">
+                            <button type="button" class="snor-btn" data-toggle="modal" data-target="#ModalAdd" onclick="modalAdd('Tipes')">
+                                <i class="fas fa-plus-square"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="Tipes_tbody">
+                    {{#each objects.tipes}}
+                    <tr id="Tipes_{{{id}}}">
+                        <th scope="row">{{{id}}}</th>
+                        <td><div type="text" id="Tipes_{{{id}}}_name" contenteditable="false">{{{name}}}</div></td>
+                        <td>
+                            <button type="button" class="snor-btn" onclick="dbOption(this, 'Tipes', 1, {{{id}}})">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button type="button" class="snor-btn" data-toggle="modal" data-target="#ModalDelete" onclick="dbDelete('Tipes', {{{id}}})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-8 snor-table-overflow">
+            <h4>Marcas</h4>
+           <table class="table table-light table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">
+                            <button type="button" class="snor-btn" data-toggle="modal" data-target="#ModalAdd" onclick="modalAdd('Brands')">
+                                <i class="fas fa-plus-square"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="Brands_tbody">
+                    {{#each objects.brands}}
+                    <tr id="Brands_{{{id}}}">
+                        <th scope="row">{{{id}}}</th>
+                        <td><div type="text" id="Brands_{{{id}}}_name" contenteditable="false">{{{name}}}</div></td>
+                        <td>
+                            <button type="button" class="snor-btn" onclick="dbOption(this, 'Brands', 1, {{{id}}})">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button type="button" class="snor-btn" data-toggle="modal" data-target="#ModalDelete" onclick="dbDelete('Brands', {{{id}}})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="snor-table-overflow ">
+            <h4>Modelos</h4>
+            <table class="table table-light table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">HP</th>
+                        <th scope="col">CC</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">Width</th>
+                        <th scope="col">Height</th>
+                        <th>
+                            <button type="button" class="snor-btn" data-toggle="modal" data-target="#ModalAdd" onclick="modalAdd('Models')">
+                                <i class="fas fa-plus-square"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="Models_tbody">
+                    {{#each objects.models}}
+                    <tr id="Models_{{{id}}}">
+                        <th scope="row">{{{id}}}</th>
+                        <td><div id="Models_{{{id}}}_name" contenteditable="false">{{{name}}}</div></td>
+                        <td><div id="Models_{{{id}}}_brand" contenteditable="false">{{{brand}}}</div></td>
+                        <td><div id="Models_{{{id}}}_tipe" contenteditable="false">{{{tipe}}}</div></td>
+                        <td><div id="Models_{{{id}}}_hp" contenteditable="false">{{{hp}}}</div></td>
+                        <td><div id="Models_{{{id}}}_cc" contenteditable="false">{{{cc}}}</div></td>
+                        <td><div id="Models_{{{id}}}_weight" contenteditable="false">{{{weight}}}</div></td>
+                        <td><div id="Models_{{{id}}}_width" contenteditable="false">{{{width}}}</div></td>
+                        <td><div id="Models_{{{id}}}_height" contenteditable="false">{{{height}}}</div></td>
+                        <td>
+                            <button type="button" class="snor-btn" onclick="dbOption(this, 'Models', 1, {{{id}}})">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button type="button" class="snor-btn" data-toggle="modal" data-target="#ModalDelete" onclick="dbDelete('Models', {{{id}}})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="ModalAdd" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <form autocomplete="off" id="dbAddForm" class="modal-content text-center">
+            <div class="modal-header p-1">
+                <h4 id="dbAddHeader">Agregar </h4> 
+            </div>
+            <div class="modal-body" id="modalAddBody">
+            </div>
+            <div class='modal-footer mx-auto'>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" onclick="dbAdd()">Aceptar</button>
+            </div>
+        </form>
+    </div>
+</div>

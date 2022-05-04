@@ -1,0 +1,162 @@
+<div class="row position-relative">
+    <aside class="snor-sidebar">
+        <form class="p-3" id="filterForm">
+            <h5>Filtros</h5>
+            <h6 class="mt-3">Tipo</h6>
+            {{#each objects.tipes}}
+                <input type="checkbox" class="btn-check" name="Tipe" id="Tipe-{{name}}" value="{{name}}">
+                <label class="snor-lbl-option" for="Tipe-{{name}}" onclick="Filter('Tipe', '{{name}}')" id="lbl-Tipe-{{name}}">{{name}}</label>
+            {{/each}}
+            <h6 class="mt-3">Marcas</h6>
+            {{#each objects.brands}}
+                <input type="checkbox" class="btn-check" name="Brand" id="Brand-{{name}}" value="{{name}}">
+                <label class="snor-lbl-option" for="Brand-{{name}}" onclick="Filter('Brand', '{{name}}')" id="lbl-Brand-{{name}}">{{name}}</label>
+            {{/each}}
+            <h6 class="mt-3">Modelo</h6> 
+            {{#each objects.models}}
+                <input type="checkbox" class="btn-check" name="Model" id="Model-{{name}}" value="{{name}}" tipe="{{tipe}}" brand="{{brand}}">
+                <label class="snor-lbl-option" for="Model-{{name}}" id="lbl-Model-{{name}}">{{name}}</label>
+            {{/each}}
+            <h6 class="mt-3">Precio</h6> 
+            <div class="text-center px-3">
+                <input type="range" class="form-range" min="{{{objects.atributos.minPrice}}}" max="{{objects.atributos.maxPrice}}" value="0" step="10000" name="price" id="precio">
+                <input type="text" class="snor-input w-100" id="precioVal" disabled>
+            </div>
+            <h6 class="mt-3">Kilometros</h6> 
+            <div class="row">
+                <div class="col-5">
+                    <input type="number" class="snor-input w-100" placeholder="Min" min="{{objects.atributos.minKM}}" max="{{objects.atributos.maxKM}}" name="Km_min">
+                </div>
+                <div class="col-2 text-center">
+                    -
+                </div>
+                <div class="col-5">
+                    <input type="number" class="snor-input w-100" placeholder="Máx" min="{{objects.atributos.minKM}}" max="{{objects.atributos.maxKM}}"  name="Km_max">
+                </div>
+            </div>
+            <h6 class="mt-3">Color</h6> 
+            <div class="color-boxes">
+                <div class="row row-cols-4 g-1 mx-auto">
+                    <div class="col">
+                        <div class="snor-color snor-color-green"></div>
+                    </div>
+                    <div class="col">
+                        <div class="snor-color snor-color-red"></div>
+                    </div>
+                    <div class="col">
+                        <div class="snor-color snor-color-orange"></div>
+                    </div>
+                    <div class="col">
+                        <div class="snor-color snor-color-blue"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5 mb-4">
+                <button class="snor-btn bg-black" id="filterButton">
+                    Aplicar
+                </button>
+            </div>
+        </form>
+    </aside>
+
+    <article class="snor-deck p-4">
+        <div class="row row-cols-md-3 g-2" id="snor-deck">
+            {{#each objects.vehicles}}
+            <section id="{{id}}">
+                <div class="snor-card">
+                    {{#if ../admin}}
+                        <div class="box" >
+                            <a href="./{{id}}">
+                                <img src="{{img}}" alt="...">
+                            </a>
+                        </div>
+                        <div class="p-4 row">
+                            <div class="col-10">
+                                <h5>${{{price}}}</h5>
+                                    {{year}} | {{km}}km
+                                <p class="card-text mt-2">{{brand}} {{model}}</p>
+                            </div>
+                            <div class="col-2 my-auto">
+                                <button type="button" class="snor-btn" onclick="deleteVehicle('{{id}}')">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                            
+                        </div>
+                    {{else}}
+                        <div class="box" >
+                            <a href="../Vehicles/{{id}}">
+                                <img src="{{img}}" alt="...">
+                            </a>
+                        </div>
+                        <div class="p-3">
+                            <h5>${{price}}</h5>
+                                {{year}} | {{km}}km
+                            <p class="card-text mt-2">{{brand}} {{model}}</p>
+                        </div>
+                    {{/if}}
+                </div>
+            </section>
+            {{/each}}
+        </div>
+    </article>
+
+    
+    
+</div>
+
+<div class="modal fade" id="ModalFiltro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content text-center">
+            <div class="modal-header p-1">
+                <button type="button" class="snor-btn bg-dark mx-auto" data-dismiss="modal" aria-label="Close" onclick="closeFilter()">
+                    <i class="fas fa-window-close"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="filterArea">
+                Buenas
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function()
+        {
+        $('#precio').change(function() {
+        $('#precioVal').val('$'+$(this).val());
+        //aquí pude ir el método para poner opciones disabled
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    window.onload = () => {
+    dbRef.child("Brands").get().then((snap) => {
+        for (i in snap.val()) {
+            if (snap.child(i).val().active) {
+                const name = snap.child(i).val().name;
+                const cb = document.getElementById(`Brand-${name}`);
+                dbRef.child("RelTipeBrand").orderByChild("brand").equalTo(name).get().then((snapp) => {
+                    let tipes = [];
+                    for (i in snapp.val()) {
+                        tipes.push(snapp.child(i).val().tipe)
+                    }
+                    cb.setAttribute("tipe", tipes);
+                })
+            }
+        }
+    })
+    /* 
+        rellenar las ocpiones de addModelSelect con todos los modelos existentes
+    */
+    if (document.getElementById("addModelSelect")) {
+        dbRef.child("Models").get().then((snap) => {
+        for (i in snap.val()) {
+            document.getElementById("addModelSelect").innerHTML += 
+            `<option>${snap.child(i).child("name").val()}</option>`
+        }
+    })
+    }
+};
+</script>
