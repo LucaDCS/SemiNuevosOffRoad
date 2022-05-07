@@ -12,4 +12,16 @@ const notNull = (req, res, next) => {
         res.end("Error");
     }
 }
-module.exports = {notNull};
+
+const strComma = (number) => {
+    strNumero = String(number)
+
+    i = strNumero.length
+    while (i > 3) {
+        i = i - 3 
+        strNumero =  strNumero.substring(0, i) + "," + strNumero.substring(i, strNumero.length);
+    }
+    return(strNumero)
+}
+
+module.exports = {notNull, strComma};

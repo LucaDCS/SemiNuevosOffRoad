@@ -223,7 +223,7 @@ $("#filterForm").submit(function(){
                             <div class="col-10">
                                 <h5>$${vehiculos[i].price}</h5>
                                     ${vehiculos[i].year} | ${vehiculos[i].km}km
-                                <p class="card-text mt-2">${vehiculos[i].model}</p>
+                                <p class="card-text mt-2">${vehiculos[i].brand} ${vehiculos[i].model}</p>
                             </div>
                             <div class="col-2 my-auto">
                                 <button type="button" class="snor-btn" onclick="deleteVehicle('${vehiculos[i].id}')">

@@ -368,7 +368,7 @@ function deleteVehicle(id) {
 }
 function editVehicle(id) {
     document.getElementById("data_price").contentEditable = true;
-    document.getElementById("data_km").contentEditable = true;
+    //document.getElementById("data_km").contentEditable = true;
     document.getElementById("data_year").contentEditable = true;
     document.getElementById("contactButton").innerHTML = 
     `
@@ -380,13 +380,13 @@ function editVehicle(id) {
 }
 function saveVehicle(id) {
     const price = document.getElementById("data_price");
-    const km = document.getElementById("data_km"); 
+    //const km = document.getElementById("data_km"); 
     const year = document.getElementById("data_year"); 
 
     const data = {
         id, 
         price: price.innerHTML,
-        km: km.innerHTML,
+        //km: km.innerHTML,
         year: year.innerHTML
     }
     $.ajax({
@@ -396,7 +396,7 @@ function saveVehicle(id) {
         success: function(result) {
             if (result != "error") {
                 price.contentEditable = false;
-                km.contentEditable = false;
+                //km.contentEditable = false;
                 year.contentEditable = false;
                 document.getElementById("contactButton").innerHTML = 
                 `

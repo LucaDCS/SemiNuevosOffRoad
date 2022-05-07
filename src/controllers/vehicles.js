@@ -1,5 +1,6 @@
 const { db, dbRef } = require('../config/firebase');
 const Vehicle = require('../models/Vehicle');
+const { strComma } = require('../middleware/methods')
 
 async function getVehicles() {
     return new Promise((resolve)=> {
@@ -23,6 +24,7 @@ async function getVehicles() {
                     if (Number(vehicle.km) > atributos[3]) {
                         atributos[3] = Number(vehicle.km);
                     }
+                    vehicle.price = strComma(vehicle.price)
                     vehicles.push(vehicle)
                 }
             }
@@ -37,6 +39,7 @@ async function getVehicle(vehicleID) {
                 // se podría crear un objeto
                 const vehicle = new Vehicle(snap.val());
                 vehicle.id = vehicleID;
+                vehicle.price = strComma(vehicle.price)
 
                 dbRef.child("Models").orderByChild("name").limitToFirst(1).equalTo(vehicle.model).get().then((snapp) => {
                     for (i in snapp.val()) {
@@ -133,7 +136,7 @@ const createVehicle = (req, res) => {
 const updateVehicle = (req, res) => {
     const data = req.body;
     let price = String(data.price);
-    let km = String(data.km);
+    //let km = String(data.km);
     const year = data.year;
     let continuar = true;
     if (isNaN(price)) {
@@ -143,7 +146,7 @@ const updateVehicle = (req, res) => {
             continuar = false;
         }
     }
-    if (continuar) {
+    /* if (continuar) {
         if (isNaN(km)) {
             km = km.substring(0, km.length-2)
             if (isNaN(km)) {
@@ -151,11 +154,11 @@ const updateVehicle = (req, res) => {
                 continuar = false;
             }
         }
-    }
+    } */
     if (continuar) {
         const currentYear = new Date().getFullYear();
         if (year > 2010 && year <= currentYear+1) {
-            db.ref(`Vehicles/`).child(data.id).child("km").set(km);
+            //db.ref(`Vehicles/`).child(data.id).child("km").set(km);
             db.ref(`Vehicles/`).child(data.id).child("price").set(price);
             db.ref(`Vehicles/`).child(data.id).child("year").set(year);
             res.end("ok")
@@ -285,6 +288,7 @@ const filterVehicles = async (req, res) => {
                     let model = snap.child(i).child("model").val();
                     let brand = snap.child(i).child("brand").val();
                     let price = snap.child(i).child("price").val();
+                    price = strComma(price)
                     let year = snap.child(i).child("year").val();
                     let km = snap.child(i).child("km").val();
                     let img = snap.child(i).child("img").val();

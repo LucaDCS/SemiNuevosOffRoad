@@ -15,7 +15,6 @@ async function getTipes(page) {
                 } else {
                     tipes.push(tipe);
                 }
-                
             }
             resolve(tipes)
         })
