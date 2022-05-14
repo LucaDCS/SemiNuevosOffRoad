@@ -213,20 +213,20 @@ function dbAdd() {
     // aquí creo que podría usar el serialize, ya que no estoy pasando parametros en mi función
     // u obtener los datos del form de alguna otra manera; 
     const data = {};
-    const table = document.forms[1].table.value;
-    data.name = document.forms[1].name.value;
+    const table = document.forms[0].table.value;
+    data.name = document.forms[0].name.value;
 
     if (table == "Models") {
-        data.brand = document.forms[1].brand.value;
-        data.tipe = document.forms[1].tipe.value;
-        data.hp = document.forms[1].hp.value;
-        data.cc = document.forms[1].cc.value;
-        data.weight = document.forms[1].weight.value;
-        data.width = document.forms[1].width.value;
-        data.height = document.forms[1].height.value;
-        data.description = document.forms[1].description.value;
-        data.descripcion = document.forms[1].descripcion.value;
-        data.video = document.forms[1].video.value;
+        data.brand = document.forms[0].brand.value;
+        data.tipe = document.forms[0].tipe.value;
+        data.hp = document.forms[0].hp.value;
+        data.cc = document.forms[0].cc.value;
+        data.weight = document.forms[0].weight.value;
+        data.width = document.forms[0].width.value;
+        data.height = document.forms[0].height.value;
+        data.description = document.forms[0].description.value;
+        data.descripcion = document.forms[0].descripcion.value;
+        data.video = document.forms[0].video.value;
     }
 
     console.log(data)

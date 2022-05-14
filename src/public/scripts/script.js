@@ -260,3 +260,19 @@ $("#suscriptionForm").submit(function() {
     })
     return false;
 })
+
+document.onkeydown=function(e){
+    if (document.getElementById("Carrusel").className == "ct-modal modal fade show") {
+        if (e.which == 32 || e.which == 56 || e.which == 104) {
+            Like(null);
+            return false;
+        }
+        if (e.which == 39) {
+            $('#carousel').carousel('next');
+            return false;
+        } else if (e.which == 37) {
+            $('#carousel').carousel('prev');
+            return false;
+        }
+    }
+}
