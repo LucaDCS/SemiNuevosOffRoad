@@ -101,8 +101,7 @@ router.post('/Contact', (req, res) => {
     })
 })
 router.post('/Suscription', (req, res) => {
-    const email = req.body.mail;
-
+    const email = req.body.email;
     const newKey = dbRef.child('Suscriptions').push().key;
     db.ref('Suscriptions/' + newKey).set({
         email
@@ -115,8 +114,8 @@ router.post('/Suscription', (req, res) => {
         }
     });
 })
-router.get('/Distribution', function(req, res) {
-    res.render('distribution', {layout: 'main'});
+router.get('/FAQ', function(req, res) {
+    res.render('faq', {layout: 'main'});
 });
 
 module.exports = router;
