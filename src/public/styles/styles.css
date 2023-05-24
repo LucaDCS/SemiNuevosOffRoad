@@ -222,6 +222,12 @@ a {
 .snor-main-card:hover>span {
     background-color: #7ee22e !important;
 }
+.snor-main-card a {
+    color: black;
+}
+.snor-main-card a:hover {
+    color: white;
+}
 
 /* Sección 4 */
 .snor-section-4 {
@@ -575,6 +581,7 @@ table {
     text-align: center;
     border-radius: 2px;
     transition: all .4s;
+    height: 30px;
 }
 .snor-input:hover {
     border-style: solid;
@@ -602,6 +609,17 @@ input[type='range']::-webkit-slider-thumb:active, input[type='range']::-webkit-s
 	border-radius: 100%;
 }
 
+
+.text-justify {
+    text-align: justify;
+}
+.snor-card a {
+    color: #7ee22e;
+}
+.snor-card a:hover {
+    color: #7ee22e;
+    font-weight: bold;
+}
 /* .snor-lbl-option[tipe='1'] {
     color: red !important;
 } */

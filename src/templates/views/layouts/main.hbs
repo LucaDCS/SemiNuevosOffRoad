@@ -36,15 +36,18 @@
         </a>
 		<!--opciones-->
 		<div class='snor-band'>
-            <div class="row w-75 mx-auto mt-1" id="head-options">
-                <a href="../../Vehicles" class="col-4 snor-btn" open="{{{views.vehicles}}}">
+            <div class="row mx-auto mt-1" id="head-options">
+                <a href="../../Vehicles" class="col-3 snor-btn" open="{{{views.vehicles}}}">
                     Vehículos
                 </a>
-                <a href="../../Solds" class="col-4 snor-btn" open="{{{views.sold}}}">
+                <a href="../../Solds" class="col-3 snor-btn" open="{{{views.sold}}}">
                     Vendidos
                 </a>
-                <a href="../../FAQ" class="col-4 snor-btn" open="{{{views.faq}}}">
+                <a href="../../FAQ" class="col-3 snor-btn" open="{{{views.faq}}}">
                     Preguntas Frecuentes
+                </a>
+                <a href="../../Contact" class="col-3 snor-btn" open="{{{views.contact}}}">
+                    Cotizar
                 </a>
             </div>
             <div class="snor-hambur hidden">
@@ -67,8 +70,11 @@
                     <a href="../../Solds" class="col-3 snor-btn w-100" open="{{{views.sold}}}">
                         Vendidos
                     </a>
-                    <a href="../../Distribution" class="col-3 snor-btn w-100" open="{{{views.distribution}}}">
+                    <a href="../../FAQ" class="col-3 snor-btn w-100" open="{{{views.faq}}}">
                         Distribucion
+                    </a>
+                    <a href="../../Contact" class="col-3 snor-btn w-100" open="{{{views.contact}}}">
+                        Cotizar
                     </a>
 				</div>
 			</nav>
@@ -82,14 +88,14 @@
             <h4>Suscríbete a nuestro newsletter: </h4>
             <div class="my-2 pt-2">
                 Entérate de promociones, nuevos vehículos semi nuevos off road a la venta y descuentos.
-                <form action="Suscription" method="post" class="mx-auto my-3">
-                    <input type="text" class="snor-input" name="email" placeholder="example@mail.com">
+                <form id="suscriptionForm" class="mx-auto my-3">
+                    <input type="text" class="snor-input" name="email" placeholder="example@mail.com" id="subscription_email">
                     <button type="submit" class="snor-btn">Suscribe</button>
                 </form>
             </div>
         </div>
         <div class="col-4">
-            <h4>Contact:</h4>
+            <h4>Contacto:</h4>
             <div class="row mt-3">
                 <div class="col">
                     <i class="fas fa-phone-alt me-1"></i>
@@ -139,4 +145,4 @@
     </script>
 </body>
 
-</html
+</html>

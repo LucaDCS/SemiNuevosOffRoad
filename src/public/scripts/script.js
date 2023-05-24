@@ -255,8 +255,22 @@ $("#contactForm").submit(function(){
 
 $("#suscriptionForm").submit(function() {
     const data = $(this).serialize();
-    $.post('/Suscription', data, function(id){
-        console.log(`Suscription ID: ${id}`);
-    })
+    new Promise(resolve => {
+		$.ajax({
+			url: `/Suscription`,
+			dataType: "json",
+			type: 'post',
+			data: data,
+			success: function (value) {
+                console.log(value)
+				resolve( value );
+			},
+			error: function (error) {
+				console.log(error.responseText);
+				resolve( error.responseText );
+			}
+		})
+	})
+    document.getElementById("subscription_email").value = "";
     return false;
 })

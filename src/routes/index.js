@@ -115,7 +115,10 @@ router.post('/Suscription', (req, res) => {
     });
 })
 router.get('/FAQ', function(req, res) {
-    res.render('faq', {layout: 'main'});
+    res.render('faq', {layout: 'main', views: {faq: true}});
+});
+router.get('/Contact', function(req, res) {
+    res.render('contact', {layout: 'main', views: {contact: true}});
 });
 
 module.exports = router;

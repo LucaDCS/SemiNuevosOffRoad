@@ -71,7 +71,7 @@
                     <a href="../../Vehicles/Admin/" class="col-3 snor-btn w-100" open="{{{views.vehicles}}}">
                         Vehiculos
                     </a>
-                    <a href="../../Accessories/Admin/" class="col-3 snor-btn w-100" open="{{{views.accessories}}}">
+                    <a href="../../Solds/Admin/" class="col-3 snor-btn w-100" open="{{{views.solds}}}">
                         Accesorios
                     </a>
                     <a href="../../dbOptions/Admin/">
@@ -87,6 +87,42 @@
     </header>
 
     {{{body}}}
+
+    <div class="snor-footer row">
+        <div class="snor-band bg-green mb-4"></div>
+        <div class="col-8">
+            <h4>Suscríbete a nuestro newsletter: </h4>
+            <div class="my-2 pt-2">
+                Entérate de promociones, nuevos vehículos semi nuevos off road a la venta y descuentos.
+                <form id="suscriptionForm" class="mx-auto my-3">
+                    <input type="text" class="snor-input" name="email" placeholder="example@mail.com" id="subscription_email">
+                    <button type="submit" class="snor-btn">Suscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-4">
+            <h4>Contacto:</h4>
+            <div class="row mt-3">
+                <div class="col">
+                    <i class="fas fa-phone-alt me-1"></i>
+                    <a href="tel:+6242355655 ">624 235 5655</a>
+                </div>
+                <div class="col">
+                    <i class="fas fa-mail-alt me-1"></i>
+                    <a href="tel:+15615427718">seminuevosoffroad@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="snor-media py-3">
+                <a href="https://www.facebook.com/SemiNuevos-OffRoad-114724481118508" target="_blank" rel="noreferrer"><img src="../../assets/iredes/facebook.svg" alt="sdfdfr5r67"></a>
+                <a href="https://www.instagram.com/seminuevosoffroad/" target="_blank" rel="noreferrer"><img src="../../assets/iredes/instagram.svg" alt="sfdfgdyr687t78"></a>
+                <a href="https://www.youtube.com/channel/UCSUQADJYgFJcjXe6Qs0c_2Q" target="_blank" rel="noreferrer"><img src="../../assets/iredes/youtube.svg" alt="sdfdg6t78"></a>
+            </div>
+        </div>
+        <div class="snor-band bg-grey-dark mt-4 p-3">
+            2022 © SemiNuevosOffRoad - Todos los derechos reservados
+        </div>
+    </div>
 
     <div class="modal fade" id="ModalDelete" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -147,41 +183,6 @@
                     </div>
                 </form>
             </div>
-        </div>
-    </div>
-    <div class="snor-footer row">
-        <div class="snor-band bg-green mb-4"></div>
-        <div class="col-8">
-            <h4>Suscríbete a nuestro newsletter: </h4>
-            <div class="my-2 pt-2">
-                Entérate de promociones, nuevos vehículos semi nuevos off road a la venta y descuentos.
-                <form action="Suscription" method="post" class="mx-auto my-3">
-                    <input type="text" class="snor-input" name="email" placeholder="example@mail.com">
-                    <button type="submit" class="snor-btn">Suscribe</button>
-                </form>
-            </div>
-        </div>
-        <div class="col-4">
-            <h4>Contact:</h4>
-            <div class="row mt-3">
-                <div class="col">
-                    <i class="fas fa-phone-alt me-1"></i>
-                    <a href="tel:+6242355655 ">624 235 5655</a>
-                </div>
-                <div class="col">
-                    <i class="fas fa-mail-alt me-1"></i>
-                    <a href="tel:+15615427718">seminuevosoffroad@gmail.com</a>
-                </div>
-            </div>
-
-            <div class="snor-media py-3">
-                <a href="https://www.facebook.com/SemiNuevos-OffRoad-114724481118508" target="_blank" rel="noreferrer"><img src="../../assets/iredes/facebook.svg" alt="sdfdfr5r67"></a>
-                <a href="https://www.instagram.com/seminuevosoffroad/" target="_blank" rel="noreferrer"><img src="../../assets/iredes/instagram.svg" alt="sfdfgdyr687t78"></a>
-                <a href="https://www.youtube.com/channel/UCSUQADJYgFJcjXe6Qs0c_2Q" target="_blank" rel="noreferrer"><img src="../../assets/iredes/youtube.svg" alt="sdfdg6t78"></a>
-            </div>
-        </div>
-        <div class="snor-band bg-grey-dark mt-4 p-3">
-            2022 © SemiNuevosOffRoad - Todos los derechos reservados
         </div>
     </div>
     <div class="modal fade show" id="Blocker" tabindex="-1" data-backdrop="static" aria-modal="true" style="display: block;">
