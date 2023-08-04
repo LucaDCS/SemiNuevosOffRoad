@@ -1,3 +1,12 @@
 {
-
+  "type": "service_account",
+  "project_id": "seminuevosoffroad",
+  "private_key_id": "95c7c0306ff7c2eb422b04b5d83f46839391f417",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDv4tg/6zFzQACK\nRsRRo//VWlx5NgAi8a7ZbcdWIEIYsImhAYq/9CCENw9g+xlAbSpklEFZo8AllqXe\ncGqQsQKls9yJl5ohYKPaguqg4Cb/fxPMPwJKRB/pJwQp1Q5Y03wbr1NiGo5W9ivg\nhwjwcVXNGkEhiSFoL5ulJ3aNV9aNEeYp2Za+xYW4g/R6EZ08fjDFWs3y0C2Jp14d\naq0CZH5jyYO8Pa0X5FuHaNcjEb9WzD0mEKGEqc3cmFaPhPlatSZrc1QFgEOr5k+V\nQBCRUaIy09SB1kdV2jU844BELtGypzdMBb+8LqDhJjp1hIMQpj3Wq4+CxXWavh8W\n5RnE4tpJAgMBAAECggEAD+BqIpTc4X1Xa89yN9sMWCESZL1Ttfxb760J1+Prq/mn\nKj5RYhH0wvtn66nCypZPC3gaeSXS1koJsVasXuYwQCpOytZ7T4E3ZwNqJvqe6iMN\neuOisaqfmA1Kg8BDolJg8O4iLSiHyi6hycr2Jv/BR4FY1TDfwqb//KbHfGRXYV+w\nlia81OgtVxJI9/9MdeEg3ttGOj/nGHFx4R1dKUyBAuZHUZfeGiG76MEMVV+IoId1\nY14D0Eyis0H//TsyHUKjNFYREOQRGDTnyvnhGnaoE7a2Qhl83cv++IVpBH1SkALa\ni+zlm3PlEmhXq8KMWkaUTtotWq/JZJW4Wyl4mzksgQKBgQD9Ffb4zlUug6BumRgI\nXgTJwa9XSrW621iEl0t9VemV1R/BgH4/BrDUKAweEf7rS5Tg189DlBk6Cqx6wWvs\nYVu8uAjCjMaHE4qHDG7qnxLTOd2wUHrmXHsWGsjTXnh8UBJd29/B0/As3VAR3S8L\naEnvDklW42OknAvlqq1HLRjP4QKBgQDypfh0lkj1qT1Za4JN4wN3ILL7zgQeM95H\neZheLArerVYkzf0fv1mYKhlYoeMrY9R6JpHrNyfnuTWmFUPoj6imSV7bx84C0CHx\nj3nh2KUO/M9tAVvpeJFzNNmiA5X8xq9B6rUGeVhNdPu4ZEPfbO5oQQWTq1NK8Cup\na6NXb5R3aQKBgATilKbOzMQeFE2uNNGMhwkh7PGBZqqZq0a76OAddWnH+Fny0f0D\ncwxVTY6TCFmgVtpUMBL829PL+vJPo3anlm65Gqour3JSBT2AFu/+bA2Zs1bA5u5l\nYJbXo4K48xhrLz+Si+og3iTvjKkbnNnahHrRysabkwPNY0lmlvulujHhAoGAFoaZ\n3hjlhQjFDTwRyLE+bRy4APBLKZKfG/uJzZRBHhLxYFFPIlddNecSm0vMDwchfoV+\nHlvsdHKZLGXk+/36JhXBnJ2b3l78B7TOF81I5W9Kwk/R/IaY2h0Z5xR2JBU9x9zG\nGWfCbs5hX+jO9DrklwESR3csMFTDeOLpMwDEw6ECgYEAgA7NL3zAs5IOy5O/+gRb\n20KEaXlEyqPnMIwaTMtq7brXYeD16KSwK2drEpTDKdiU5vPG7NDiCucWQW6dttNQ\nDksW0xcL/ccGAs8f7wUAyl0kuIl2AEET6ICSsLeSg6Re9w5XSnXAQ0hJZl2CO3En\nho1xrxWLIBz+YCBTtOlkVvQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-vycd8@seminuevosoffroad.iam.gserviceaccount.com",
+  "client_id": "116148938356836910271",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-vycd8%40seminuevosoffroad.iam.gserviceaccount.com"
 }
