@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+	<meta name="viewport" charset='UTF-8' content="width=device-width, initial-scale=1" />
+	<meta name="description" content="SemiNuevos_OffRoad">
+	<title>SNOR-Admin</title>
+	<link rel="stylesheet" type="text/css" href="styles/log-in.css" aria-disabled="false" media="all" >
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet" aria-disabled="false" media="all" >
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'
+		integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=='
+		crossorigin='anonymous' aria-disabled="false" media="all" />
+	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js" ></script>
+	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-analytics.js" ></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<main>
+    <div class="container-login">
+		<div class="login-content">
+			<form class="login-form">
+				<img src="assets/Logo3.png" alt="Logo">
+				<h2 class="title">Bienvenido</h2>
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="div">
+						<label for="input-user">Usuario</label>
+						<input type="text" class="login-input" id="input-user" name="user" autocomplete="on">
+					</div>
+				</div>
+				<div class="input-div pass">
+					<div class="i">
+						<i class="fas fa-lock"></i>
+					</div>
+					<div class="div">
+						<label for="input-pass">Contraseña</label>
+						<input type="password" class="login-input" id="input-pass" name="password" autocomplete="on">
+					</div>
+				</div>
+				<button type="button" class="btn-login" onclick="LogIn(form)"> Aceptar </button>
+				<button type="button" class="btn-login" onclick="LogOut()"> Log-Out </button>
+				<button type="button" class="btn-login" onclick="Prueba()"> Listar </button>
+			</form>
+		</div>
+	</div>
+    <script type="text/javascript" src="scripts/log-in.js"></script>
+    </main>
+</body>
+
+</html>

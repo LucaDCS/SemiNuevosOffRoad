@@ -1,0 +1,24 @@
+{
+  "name": "seminuevosoffroad",
+  "version": "1.0.0",
+  "description": "Web de SemiNuevos OffRoad, por CactusTours",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
+  },
+  "author": "LucaDCS",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.3",
+    "firebase-admin": "^10.0.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

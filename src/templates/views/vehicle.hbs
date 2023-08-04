@@ -1,0 +1,251 @@
+<div class="bg-whitesmoke">
+    <article class="snor-content">
+        <div class="row bg-white p-3">
+            <section class="col-8 my-auto">
+                <div class="box p-1">
+                    <img src="{{data.img}}" alt="imagen" id="img-big" data-toggle="modal" data-target="#modalPictures">
+                </div>
+                <hr class="mt-3 mb-0 snor-b3">
+                <div class="snor-img-line p-2 row row-cols-md-5">
+                    {{#each images}}
+                        {{#if show}}
+                            <div class="col p-2">
+                                <div class="box p-1">
+                                    <img src="{{url}}" class="snor-img-small" alt="{{name}}" name="{{name}}" onmouseover="TurnImg(this)">
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                    <div class="col p-2">
+                        <div class="box p-1">
+                            <img src="../../assets/plusImg.jpg" class="snor-img-small" alt="Ver más" data-toggle="modal" data-target="#modalPictures">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <aside class="col-4 my-auto">
+                <div class="snor-specs mx-auto">
+                    <h3 class="my-3">{{data.brand}} {{data.model}}</h3> 
+                    <div class="snor-band bg-green"></div>
+                    <div class="snor-price text-center" id="data_price">${{data.price}}</div>
+                    <div class="snor-line"></div>
+                    <div class="snor-char">
+                        <table class="table">
+                            <tr>
+                                <th>Marca:</th>
+                                <td>{{data.brand}}</td>
+                            </tr>
+                            <tr>
+                                <th>Modelo:</th>
+                                <td>{{data.model}}</td>
+                            </tr>
+                            <tr>
+                                <th>HP:</th>
+                                <td>{{data.hp}}hp</td>
+                            </tr>
+                            <tr>
+                                <th>Motor:</th>
+                                <td>{{data.cc}}cc</td>
+                            </tr>
+                            <tr>
+                                <th>Año:</th>
+                                <td id="data_year">{{data.year}}</td>
+                            </tr>
+                            <tr>
+                                <th>Longitud:</th>
+                                <td>{{data.width}}cm</td>
+                            </tr>
+                            <tr>
+                                <th>Altura:</th>
+                                <td>{{data.height}}cm</td>
+                            </tr>
+                            <tr>
+                                <th>Peso:</th>
+                                <td>{{data.weight}}kg</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="text-center" id="contactButton">
+                    {{#if admin}}
+                    <button class="snor-btn" onclick="editVehicle('{{data.id}}')">
+                        Editar
+                    </button>
+                    {{else}}
+                    <button class="snor-btn" data-toggle="modal" data-target="#modalContact">
+                        Contactar
+                    </button>
+                    {{/if}}
+                </div>
+            </aside>
+            <hr class="mt-3 mb-0 snor-b3">
+            <section class="vehicle-data">
+
+                <div id="description" class="hidden">
+                    {{data.description}}
+                </div>
+                <div id="descripcion" class="p-5 text-center">
+                    {{data.descripcion}}
+                </div>
+
+                <div class="text-center">
+                    <iframe width="70%" height="400" src="https://www.youtube.com/embed/{{data.video}}" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+        </div>
+    </article>
+
+
+
+    {{!-- <iframe width="800" height="450" src="https://www.youtube.com/embed/ll9Fcf2f6Zw" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+
+        allowfullscreen>
+    </iframe> --}}
+
+</div>
+
+<div class="modal fade" id="modalPictures" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-transparent border-0">
+
+            <div id="carouselExampleControls" class="carousel" data-touch='false' data-interval='false' data-ride='carousel'>
+                <div class="carousel-inner" id="imgCarousel">
+                    <div class="carousel-item active">
+                        <div class="box mx-auto">
+                            <img src="{{data.img}}" alt="imgMain">
+                        </div>
+                    </div>
+                    {{#each images}}
+                    <div class="carousel-item" id="{{name}}">
+                        <div class="box mx-auto">
+                            <img src="{{url}}" alt="{{name}}">
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{#if admin}}
+            <div class="carousell-options bg-white">
+                <button class="col snor-btn" data-dismiss="modal" data-toggle="modal" data-target="#modalDelete">
+                    <i class="fas fa-trash"></i>
+                </button>
+                <button class="col snor-btn" data-dismiss="modal" data-toggle="modal" data-target="#modalAdd">
+                    <i class="fas fa-plus-square"></i>
+                </button>
+            </div>
+            {{/if}}
+            
+            <button class="carousel-control-prev snor-arrow-left" type="button" data-target="#carouselExampleControls" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next snor-arrow-right" type="button" data-target="#carouselExampleControls" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalAdd" tabindex="-1"  aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content text-center">
+            <div class="modal-header p-1">
+                <h4 >Agregar Imagen</h4> 
+            </div>
+            <form autocomplete="off" id="formImgAdd">
+                <div class="modal-body">
+                    <div class="row">
+                        <label>
+                            <h6>ID:</h6>
+                            <input type="text" name="id" class="snor-input" placeholder="{{data.id}}" disabled>
+                        </label>
+                        <label>
+                            <h6>Imagen:</h6>
+                            <input type="file" name="image" class="snor-input" accept=".jpg" id="imageFile" multiple>
+                        </label>
+                    </div>
+                </div>
+                <div class='modal-footer mx-auto'>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" onclick="addVehicleImg('{{data.id}}')">Aceptar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalDelete" tabindex="-1"  aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <div class="modal-header p-1">
+                <h4 >Eliminar Imagen</h4> 
+            </div>
+            <form autocomplete="off" id="formImgAdd">
+                <div class="modal-body">
+                    ¿Está seguro que desea eliminar la imagen?
+                </div>
+                <div class='modal-footer mx-auto'>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" onclick="deleteImg('{{data.id}}')">Aceptar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalContact" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <div class="modal-header p-1">
+                <h4>Contacto</h4> 
+            </div>
+            <form autocomplete="on" id="contactForm">
+                <div class="row my-3">
+                    <div class="row">
+                        <label class="hidden">
+                            id
+                            <input type="text" name="id" value="{{data.id}}">
+                        </label>
+                        <label>
+                            <h6>Nombre:</h6>
+                            <input type="text" name="name" class="snor-input w-75" required>
+                        </label>
+                        <label>
+                            <h6>E-mail:</h6>
+                            <input type="email" name="mail" class="snor-input w-75" required>
+                        </label>
+                        <label>
+                            <h6>E-mail confirmation:</h6>
+                            <input type="email" name="confirm" class="snor-input w-75" required>
+                        </label>
+                        <label>
+                            <h6>Cellphone:</h6>
+                            <input type="tel" name="tel" class="snor-input w-75" required>
+                        </label>
+                        <label>
+                            <h6>Message:</h6>
+                            <textarea name="msg" class="snor-input w-75"></textarea>
+                        </label>
+                    </div>
+                </div>
+                <div class='mx-auto modal-footer'>
+                    <button type="button" class="snor-btn" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="snor-btn">Aceptar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

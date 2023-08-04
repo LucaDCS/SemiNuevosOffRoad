@@ -1,0 +1,625 @@
+p {
+    font-family: Open Sans;
+}
+*::selection {
+    background-color: #7ee22e;
+}
+.row {
+    --bs-gutter-x: 0rem !important;
+}
+.modal-footer, .modal-header {
+    display: block !important;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.accordion-item {
+    border: none ;
+}
+/* Allways Show */
+.snor-header {
+	background-color: whitesmoke;
+	position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    text-align: center;
+}
+.snor-header img {
+    max-height: 100px;
+    width: auto;
+}
+.snor-header .snor-btn {
+    padding-top: 6px;
+    height: 35px;
+    font-family: Open Sans;
+}
+.snor-btn[open='true'] {
+    background-color: #7ee22e;
+    color: #3c3c3c;
+    font-weight: bolder;
+}
+.snor-header .snor-band {
+    min-height: 10px;
+}
+#Options>.snor-btn {
+    margin-top: 5px;
+}
+.snor-footer {
+    background-color: #3c3c3c;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+.snor-footer .snor-btn {
+    background-color: #7ee22e;
+    color: #3c3c3c;
+    transition: all .15s ease-in-out;
+}
+.snor-footer>.snor-band {
+    font-size: small;
+}
+.snor-footer a {
+    color: white;
+    text-decoration: none;
+}
+.snor-footer .col:hover {
+    color: #7ee22e;
+    transition: all .2s ease-in-out;
+}
+.snor-media img:hover {
+    transition: all .2s;
+    background-color: #7ee22e;
+    border-radius: 8px;
+    transform: scale(1.1);
+}
+.snor-media img:active {
+    background-color: #7ee22e;
+    border-radius: 8px;
+    transform: scale(1.1);
+    transition: all 0s;
+    box-shadow: 0 0 0 0.25rem rgb(100 255 0 / 25%) !important;
+}
+
+/* Global div */
+.snor-band {
+    background-color: #3c3c3c;
+	font-family: verdana, Tahoma, sans-serif;
+    min-height: 8px;
+    height: auto;
+    width: 100%;
+}
+
+/* *************************************************************************** MAIN */
+/* Sección 1 */
+.box {
+	height: 500px;
+    width: 100%; 
+}
+.snor-over-1 {
+    color: white;
+	position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+}
+.snor-over-1>.snor-band {
+    width: 180px;
+    background-color: #7ee22e;
+}
+.snor-over-1>.snor-h-2 {
+    width: 75px;
+}
+.snor-over-2 {
+    color: white;
+	position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+}
+.snor-over-2>.snor-band {
+    background-color: #7ee22e;
+    width: 180px;
+    height: 25px;
+    margin-left: auto;
+}
+.snor-sqrt {
+    background-color: whitesmoke;
+    width: 350px;
+    height: 300px;
+    color: black;
+}
+
+/* Sección 2 */
+.snor-section-2 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+}
+.snor-section-2 p {
+    max-width: 700px;
+}
+
+/* Sección 3 */
+.snor-section-3 {
+    position: relative;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.snor-bg-img {
+    height: 250px;
+    background-color: #222;
+    background-image: url(/assets/Lines.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.snor-bg-img::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    border: 10px solid transparent;
+    border-top-color: #fff;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.snor-section-3>.container {
+    margin-top: -170px;
+}
+.snor-main-card {
+    position: relative;
+    align-items: center;
+    margin: .25rem;
+}
+.snor-card-svg {
+    position: absolute;
+    transform: scale(0);
+    transition: all .15s;
+    top: 35%;
+}
+/* Esto se tiene que editar
+    se tienen que crear unos 
+    vectores con los vehiculos
+*/
+.snor-card-svg>img {
+    width: 54.5px;
+}
+.snor-main-card::before {
+    height: 100%;
+    width: 0%;
+    left: 100%;
+    transition: all .3s;
+    content: "";
+    background: #ecf0f1;
+    position: absolute;
+    display: block;
+}
+.snor-main-card:hover::before {
+    width: 100%;
+    left: 0;
+    transition: all .3s;
+}
+.snor-main-card:hover>.snor-card-svg {
+    transform: scale(3);
+    transition: all .40s;
+}
+.snor-main-card>span {
+    bottom: 15%;
+    position: absolute;
+    width: 50%;
+    color: #3c3c3c;
+    background-color: whitesmoke;
+    font-size: larger;
+    font-weight: bold;
+    transition: all .40s;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.snor-main-card:hover>span {
+    background-color: #7ee22e !important;
+}
+.snor-main-card a {
+    color: black;
+}
+.snor-main-card a:hover {
+    color: white;
+}
+
+/* Sección 4 */
+.snor-section-4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #eee;
+}
+.snor-section-4 .box {
+    height: 250px;
+}
+
+/* ****************** VISTA INDIVIDUAL ***************** */
+#modalPictures .box {
+	height: auto;
+}
+.snor-arrow-left {
+    margin-left: -50px;
+    width: auto;
+}
+.snor-arrow-right {
+    margin-right: -50px;
+    width: auto;
+}
+.carousell-options {
+    padding: .5rem;
+    width: auto;
+    text-align: center;
+    bottom: 0px;
+}
+/* carView */
+
+.snor-content {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    max-width: 92%;
+}
+.snor-img-line .box{
+    height: 100%;
+    max-width: 200px; 
+    border: 1px solid rgba(0,0,0,.25);
+    transition: all .3s;
+}
+.snor-img-line .box:hover{
+    transform: scale(1.1);
+    border-color: #7ee22e;
+    border-radius: 3px;
+    box-shadow: 0 0 0 0.25rem rgb(100 255 0 / 25%);
+}
+.snor-line {
+    border-top: 2px solid rgba(0,0,0,.25);
+    margin-top: .5rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+.snor-specs {
+    width: 90%;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border: 1px solid rgba(0,0,0,.25);
+    border-radius: 5px;
+    margin-bottom: 2em;
+}
+.snor-specs h3 {
+    font-family: Open Sans;
+    font-weight: bold;
+}
+.snor-price {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-size: xx-large;
+}
+.snor-char {
+    text-align: left;
+    padding-right: 1.5rem!important;
+    padding-left: 1.5rem!important;
+}
+.snor-content .snor-btn {
+    background-color: #7ee22e;
+    width: 50%;
+}
+.snor-content .snor-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 25px 20px 0 rgb(0 0 0 / 16%), 0 -1px 2px 0 rgb(0 0 0 / 10%);
+}
+
+/* ****************** VISTA VEHICULOS ***************** */
+.snor-filter {
+    color: #fff;
+    position: absolute;
+    right: 5%;
+    transform: translateY(-100%);
+    padding: 1rem 1rem;
+    display: none;
+    font-size: larger;
+}
+.snor-filter:active, .snor-filter:hover {
+    color: #7ee22e;
+    
+}
+/* Sidebar */
+.snor-sidebar {
+    background-color: whitesmoke;
+    flex: 0 0 auto;
+    width: 20% !important;
+}
+.snor-sidebar>form>h5, .snor-sidebar>form>h6 {
+    font-weight: bolder;
+}
+.snor-lbl-option {
+    transition: all .25s;
+    width: 100%;
+}
+.snor-lbl-option:hover {
+    margin-left: 10px;
+    text-shadow: 0em 0em .1em #3c3c3c;
+}
+.btn-check:checked+.snor-lbl-option{
+    color: #7ee22e;
+    font-weight: bold;
+}
+.btn-check:checked+.snor-lbl-option:hover{
+    text-shadow: 0em 0em 0.1em #7ee22e;
+}
+.btn-check:disabled+.snor-lbl-option:hover,.btn-check:disabled+.snor-lbl-option {
+    color: #ccc;
+    margin-left: 0;
+    text-shadow: none;
+}
+.card-data {
+    width: 100%;
+}
+.card-data-admin {
+    width: 70%;
+}
+.card-options {
+    display: none;
+}
+.card-options-admin {
+    width: 30%;
+}
+/* Colores */
+.snor-color {
+    height: 30px !important;
+    width: 30px !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+.snor-color:hover {
+    height: 32px !important;
+    width: 32px !important;
+}
+.snor-color-green {
+    background-color: green;
+}
+.snor-color-red {
+    background-color: red;
+}
+.snor-color-orange {
+    background-color: orange;
+}
+.snor-color-blue {
+    background-color: blue;
+}
+.color-boxes {
+    max-height: 34px;
+}
+#addVehicleForm .row>label {
+    margin-top: 5px;
+}
+/* Cards */
+.snor-deck {
+    flex: 0 0 auto;
+    width: 80% !important;
+}
+.snor-card {
+    background-color: white;
+    color: black;
+    transition: all .2s ease-in-out;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 8px;
+    margin: .5rem;
+}
+.snor-card:hover {
+    box-shadow: 0 25px 20px 0 rgb(0 0 0 / 16%), 0 -1px 2px 0 rgb(0 0 0 / 10%);
+}
+.snor-card>.box {
+	height: 180px;
+    width: 100%; 
+}
+.snor-card>.box>img {
+	border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+}
+.snor-card .snor-btn {
+    border-radius: 4px;
+    min-width: 100%;
+}
+/* ****************** DB Options ***************** */
+
+table .snor-btn{
+    color: white !important;
+    min-width: 30px;
+    background-color: #7ee22e;
+    border-radius: 5px;
+    transition: all .15s;
+}
+table .snor-btn:hover>i {
+    color: white;
+    transform: scale(1.15);
+    transition: all .15s;
+}
+table .snor-btn:active {
+    box-shadow: 0 0 0 0.25rem rgb(100 255 0 / 40%);
+}
+table {
+    vertical-align: middle !important;
+}
+.snor-table-overflow {
+    padding: 0.5rem;
+    overflow-x: auto;
+}
+
+/* ****************** GLOBALES ***************** */
+/* Background */
+.bg-green {
+    background-color: #7ee22e !important;
+}
+.bg-black {
+    background-color: #3c3c3c ;
+}
+.bg-whitesmoke {
+    background-color: whitesmoke;
+}
+.bg-grey {
+    background-color: #d6d6d6;
+}
+.bg-grey-dark {
+    background-color: #212121;
+}
+
+/* Size */
+.snor-h-2 {
+    height: 20px;
+    width: 100%;
+}
+/* Borders */
+
+/* Views */
+.hidden {
+    display: none;
+}
+.box img {
+	width: 100%;
+	height: auto;
+}
+@supports(object-fit: cover) {
+	.box img {
+		height: 100%;
+		object-fit: cover;
+		object-position: center center;
+	}
+}
+@media screen and (max-width: 600px) {
+    .snor-over-2{
+        display:none;
+    }
+    #head-options {
+        display: none;
+    }
+    .snor-hambur.hidden {
+        display: block;
+    }
+    .snor-media-center {
+        min-width: 90px;
+        text-align: center;
+    }
+    .snor-input {
+        max-width: 80%;
+    }
+    .bg-black {
+        background-color: #3c3c3c !important;
+    }
+    .snor-filter {
+        margin-top: 0 !important;
+    }
+    .snor-arrow-left {
+        margin-left: 0px;
+        background-color: white;
+    }
+    .snor-arrow-right {
+        margin-right: 0px;
+        background-color: white;
+    }
+}
+@media screen and (max-width: 1280px) {
+    .snor-content .box {
+        height: auto;
+    }
+}
+@media screen and (max-width: 760px) {
+    .snor-sidebar {
+        display: none;
+    }
+    .snor-deck {
+        width: 100% !important;
+    }
+    .snor-filter {
+        display:block !important;
+        margin-top: .5rem;
+    }
+    .snor-lbl-option:hover {
+        margin-left: 0px !important;
+        text-shadow: 0em 0em .1em #3c3c3c;
+    }
+    .col-8{
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    .col-4 {
+        margin-top: 1rem;
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    .snor-footer .snor-input {
+        margin-bottom: .5rem;
+    }
+}
+
+/* Buttons */
+.snor-btn {
+    background-color: #3c3c3c;
+    color: whitesmoke;
+    transition: all .3s ease-in-out;
+    height: 30px;
+    border: #3c3c3c;
+    min-width: 90px;
+}
+.snor-btn:hover {
+    background-color: #7ee22e;
+    color: #3c3c3c;
+    font-weight: bolder;
+}
+/* Inputs */
+.snor-input {
+    border-style: solid;
+    text-align: center;
+    border-radius: 2px;
+    transition: all .4s;
+    height: 30px;
+}
+.snor-input:hover {
+    border-style: solid;
+    border-color: #7ee22e;
+}
+.snor-input:focus-visible {
+    outline: none;
+}
+.snor-input:active, .snor-input:focus {
+    border-style: solid;
+    border-color: #7ee22e;
+    box-shadow: 0 0 0 0.25rem rgb(100 255 0 / 25%);
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+	height: 8px;
+	border-radius: 3px;
+}
+input[type='range']::-webkit-slider-thumb {
+	background: #7ee22e !important;
+	box-shadow: none !important;
+}
+input[type='range']::-webkit-slider-thumb:active, input[type='range']::-webkit-slider-thumb:focus {
+	box-shadow: 0 0 0 0.25rem rgb(100 255 0 / 25%) !important;
+	border-radius: 100%;
+}
+
+
+.text-justify {
+    text-align: justify;
+}
+.snor-card a {
+    color: #7ee22e;
+}
+.snor-card a:hover {
+    color: #7ee22e;
+    font-weight: bold;
+}
+/* .snor-lbl-option[tipe='1'] {
+    color: red !important;
+} */
